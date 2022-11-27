@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesChart from "./ExpensesChart";
 import Card from "../UI/Card";
 import "./Expenses.scss";
 
@@ -19,7 +20,7 @@ function Expenses({ items }) {
     <div>
       <Card className="expenses">
         <ExpenseFilter onChangeYear={takeYear} />
-
+        <ExpensesChart expenses={filteredArr}  />
         {filteredArr.length === 0 && <p>Not Found Expenses</p>}
         {filteredArr.length > 0 &&
           filteredArr.map((data) => (
